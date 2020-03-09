@@ -26,7 +26,9 @@ parser.add_argument('project', type=str, metavar='PROJECT', nargs='?', default='
 
 args = parser.parse_args()
 
-PROJECT = args.project
+PROJECT = os.path.normpath(args.project)
+if not PROJECT.endswith('.looptime'):
+    PROJECT += '.looptime'
 
 K_ESC = chr(27)
 K_ENTER = chr(10)
