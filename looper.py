@@ -1,4 +1,5 @@
-# !/usr/bin/env python3
+#!/usr/bin/python3 -u
+
 """
 import line_profiler
 import atexit
@@ -699,7 +700,7 @@ class Song(object):
                             add_output = False
                             break
 
-                        insort(output, (frame - pos_start, midi_buf[i]))
+                        insort(output, (frame - pos_start, tuple(midi_buf[i])))
                         i += 1
                 pattern_i += 1
 
